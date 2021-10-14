@@ -25,20 +25,27 @@ public class Gun : MonoBehaviour
 
     void Shoot()
     {
-        muzzleFlash.Play();
         RaycastHit hit;
+
         if(Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
-            Debug.Log(hit.transform.name);
-
-            Enemy enemy = hit.transform.GetComponent<Enemy>();
-            if(enemy != null)
+            muzzleFlash.Play();
+            if (hit.transform.name != ("First Person Player"))
             {
-                enemy.TakeDamage(damage);
+
+                Debug.Log(hit.transform.name);
+
+                Enemy enemy = hit.transform.GetComponent<Enemy>();
+                if (enemy != null)
+                {
+                    enemy.TakeDamage(damage);
+                }
+
+                GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
+                Destroy(impactGO, 2f);
+
             }
 
-            GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
-            Destroy(impactGO, 2f);
         }
     }
 }
