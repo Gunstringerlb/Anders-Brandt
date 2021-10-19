@@ -42,6 +42,8 @@ public class Gun : MonoBehaviour
                 enemy.TakeDamage(damage);
             }
 
+            
+
             Rigidbody rb = hit.transform.GetComponent<Rigidbody>();
             if (rb != null)
             {
