@@ -7,13 +7,22 @@ public class Gun : MonoBehaviour
     public float range = 100f;
     public float firerate = 10f;
     public float knockback = 10f;
+    private float nextTimeTofire = 0f;
+    public int maxAmmo = 30;
+    public float reloadTime = 1f;
+    private int currentAmmo;
+
+
 
     public Camera fpsCam;
     public ParticleSystem muzzleFlash;
     public GameObject impactEffect;
     [SerializeField] private LayerMask enemyLayers;
 
-    private float nextTimeTofire = 0f;
+   void Start()
+    {
+        currentAmmo = maxAmmo;
+    }
 
     // Update is called once per frame
     void Update()
