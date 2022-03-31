@@ -2,19 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class MouseLook : MonoBehaviour
 {
 
-    public float mouseSensitivity = 420f;
+    public float mouseSensitivity = 320f;
 
     public Transform playerBody;
 
     float xRotation = 0f;
 
+    public Animator anim;
+
+    public GameObject canvas;
+
     // Start is called before the first frame update
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        
     }
 
     // Update is called once per frame
@@ -28,5 +34,25 @@ public class MouseLook : MonoBehaviour
 
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         playerBody.Rotate(Vector3.up * mouseX);
+
+        AimDownSight();
+    }
+
+    void AimDownSight()
+    {
+        if (Input.GetMouseButton(1))
+        {
+            Debug.Log("Aiming");
+            anim.SetBool("ADS", true);
+            mouseSensitivity = 160;
+            canvas.SetActive(false);
+        }
+        else
+        {
+            Debug.Log("NotAiming");
+            anim.SetBool("ADS", false);
+            mouseSensitivity = 320;
+            canvas.SetActive(true);
+        }
     }
 }

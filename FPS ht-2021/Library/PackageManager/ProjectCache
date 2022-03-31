@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637679981761842369
-    m_Hash: 834160728
+      ticks: 637822658758236628
+    m_Hash: 3985869027
   m_LockFileStatus:
     m_FilePath: C:/Users/anders.larssonbrand/Documents/GitHub/Anders-Brandt/FPS ht-2021/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637679981855493212
-    m_Hash: 3466965765
+      ticks: 637822658758366302
+    m_Hash: 2102165539
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
@@ -172,6 +172,20 @@ m_PackageAssets:
         - 1.9.0
         - 1.10.2
         - 1.11.2
+        - 1.12.5
+        - 1.13.5
+        - 1.14.1
+        - 1.14.4
+        - 1.14.7
+        - 1.14.9
+        - 1.14.12
+        - 1.14.13
+        - 1.15.1
+        - 1.15.4
+        - 1.15.7
+        - 1.15.9
+        - 1.15.12
+        - 1.15.13
         - 2.0.0-preview.6
         - 2.0.0-preview.8
         - 2.0.0-preview.15
@@ -188,6 +202,20 @@ m_PackageAssets:
         - 1.9.0
         - 1.10.2
         - 1.11.2
+        - 1.12.5
+        - 1.13.5
+        - 1.14.1
+        - 1.14.4
+        - 1.14.7
+        - 1.14.9
+        - 1.14.12
+        - 1.14.13
+        - 1.15.1
+        - 1.15.4
+        - 1.15.7
+        - 1.15.9
+        - 1.15.12
+        - 1.15.13
         - 2.0.0-preview.6
         - 2.0.0-preview.8
         - 2.0.0-preview.15
@@ -287,6 +315,9 @@ m_PackageAssets:
         - 3.0.5
         - 3.0.6
         - 3.0.7
+        - 3.0.9
+        - 3.0.10
+        - 3.0.12
         compatible:
         - 1.0.2
         - 1.0.6
@@ -313,6 +344,9 @@ m_PackageAssets:
         - 3.0.5
         - 3.0.6
         - 3.0.7
+        - 3.0.9
+        - 3.0.10
+        - 3.0.12
         verified: 2.0.7
       dependencies:
       - name: com.unity.test-framework
@@ -347,13 +381,13 @@ m_PackageAssets:
         url: https://github.cds.internal.unity3d.com/unity/com.unity.ide.rider.git
         revision: abb44f053e9a41d2e00e149e32a19bcec76e98b4
         path: 
-    - packageId: com.unity.ide.visualstudio@2.0.11
+    - packageId: com.unity.ide.visualstudio@2.0.14
       testable: 0
       isDirectDependency: 1
-      version: 2.0.11
+      version: 2.0.14
       source: 1
       resolvedPath: C:\Users\anders.larssonbrand\Documents\GitHub\Anders-Brandt\FPS
-        ht-2021\Library\PackageCache\com.unity.ide.visualstudio@2.0.11
+        ht-2021\Library\PackageCache\com.unity.ide.visualstudio@2.0.14
       assetPath: Packages/com.unity.ide.visualstudio
       name: com.unity.ide.visualstudio
       displayName: Visual Studio Editor
@@ -385,6 +419,8 @@ m_PackageAssets:
         - 2.0.8
         - 2.0.9
         - 2.0.11
+        - 2.0.12
+        - 2.0.14
         compatible:
         - 1.0.2
         - 1.0.3
@@ -401,7 +437,9 @@ m_PackageAssets:
         - 2.0.8
         - 2.0.9
         - 2.0.11
-        verified: 2.0.11
+        - 2.0.12
+        - 2.0.14
+        verified: 2.0.14
       dependencies:
       - name: com.unity.test-framework
         version: 1.1.9
@@ -427,21 +465,21 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 637613656180000000
+      datePublishedTicks: 637782923640000000
       documentationUrl: 
-      hasRepository: 1
+      hasRepository: 0
       repository:
-        type: git
-        url: https://github.cds.internal.unity3d.com/unity/com.unity.ide.visualstudio.git
-        revision: 680e06d94ffca728223ae2cb14bb919cd354e2c1
+        type: 
+        url: 
+        revision: 
         path: 
-    - packageId: com.unity.ide.vscode@1.2.3
+    - packageId: com.unity.ide.vscode@1.2.5
       testable: 0
       isDirectDependency: 1
-      version: 1.2.3
+      version: 1.2.5
       source: 1
       resolvedPath: C:\Users\anders.larssonbrand\Documents\GitHub\Anders-Brandt\FPS
-        ht-2021\Library\PackageCache\com.unity.ide.vscode@1.2.3
+        ht-2021\Library\PackageCache\com.unity.ide.vscode@1.2.5
       assetPath: Packages/com.unity.ide.vscode
       name: com.unity.ide.vscode
       displayName: Visual Studio Code Editor
@@ -470,6 +508,7 @@ m_PackageAssets:
         - 1.2.2
         - 1.2.3
         - 1.2.4
+        - 1.2.5
         compatible:
         - 1.0.2
         - 1.0.3
@@ -483,7 +522,8 @@ m_PackageAssets:
         - 1.2.2
         - 1.2.3
         - 1.2.4
-        verified: 1.2.4
+        - 1.2.5
+        verified: 1.2.5
       dependencies: []
       resolvedDependencies: []
       keywords: []
@@ -499,13 +539,13 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 637394922300000000
+      datePublishedTicks: 637800255360000000
       documentationUrl: 
       hasRepository: 1
       repository:
         type: git
-        url: https://github.cds.internal.unity3d.com/unity/com.unity.ide.vscode.git
-        revision: b5ec9b38109e52b1b26597d521e4df75e042ebb9
+        url: https://github.com/Unity-Technologies/com.unity.ide.vscode.git
+        revision: b0740c80bfc2440527c317109f7c3d9100132722
         path: 
     - packageId: com.unity.postprocessing@2.3.0
       testable: 0
@@ -563,12 +603,16 @@ m_PackageAssets:
         - 3.0.3
         - 3.1.0
         - 3.1.1
+        - 3.2.0
+        - 3.2.1
         compatible:
         - 2.3.0
         - 3.0.1
         - 3.0.3
         - 3.1.0
         - 3.1.1
+        - 3.2.0
+        - 3.2.1
         verified: 3.1.1
       dependencies: []
       resolvedDependencies: []
@@ -593,13 +637,13 @@ m_PackageAssets:
         url: git@github.com:Unity-Technologies/PostProcessing.git
         revision: e6de985c41f04a5fc7c7227dd67e3e73fac834e7
         path: 
-    - packageId: com.unity.probuilder@4.2.3
+    - packageId: com.unity.probuilder@4.5.2
       testable: 0
       isDirectDependency: 1
-      version: 4.2.3
+      version: 4.5.2
       source: 1
       resolvedPath: C:\Users\anders.larssonbrand\Documents\GitHub\Anders-Brandt\FPS
-        ht-2021\Library\PackageCache\com.unity.probuilder@4.2.3
+        ht-2021\Library\PackageCache\com.unity.probuilder@4.5.2
       assetPath: Packages/com.unity.probuilder
       name: com.unity.probuilder
       displayName: ProBuilder
@@ -657,6 +701,7 @@ m_PackageAssets:
         - 5.0.0-pre.10
         - 5.0.1
         - 5.0.3
+        - 5.0.4
         compatible:
         - 4.0.2
         - 4.0.3
@@ -686,13 +731,14 @@ m_PackageAssets:
         - 5.0.0-pre.10
         - 5.0.1
         - 5.0.3
+        - 5.0.4
         verified: 4.5.2
       dependencies:
       - name: com.unity.settings-manager
-        version: 1.0.0
+        version: 1.0.3
       resolvedDependencies:
       - name: com.unity.settings-manager
-        version: 1.0.2
+        version: 1.0.3
       keywords:
       - 3d
       - model
@@ -726,13 +772,13 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 637148235350000000
+      datePublishedTicks: 637613656650000000
       documentationUrl: 
       hasRepository: 1
       repository:
         type: git
-        url: git@github.com:Unity-Technologies/com.unity.probuilder.git
-        revision: 8be464e9491a225fb90f7dac328bd7e39d909458
+        url: https://github.com/Unity-Technologies/com.unity.probuilder.git
+        revision: 27f52072e5f94638d1f81bc53df38e59d5bac785
         path: 
     - packageId: com.unity.progrids@3.0.3-preview.6
       testable: 0
@@ -785,7 +831,7 @@ m_PackageAssets:
         version: 1.0.2
       resolvedDependencies:
       - name: com.unity.settings-manager
-        version: 1.0.2
+        version: 1.0.3
       keywords:
       - grid
       - snap
@@ -864,10 +910,18 @@ m_PackageAssets:
         - 1.1.26
         - 1.1.27
         - 1.1.29
+        - 1.1.30
+        - 1.1.31
+        - 2.0.1-pre.12
+        - 2.0.1-pre.18
         compatible:
         - 1.1.27
         - 1.1.29
-        verified: 1.1.29
+        - 1.1.30
+        - 1.1.31
+        - 2.0.1-pre.12
+        - 2.0.1-pre.18
+        verified: 1.1.31
       dependencies:
       - name: com.unity.ext.nunit
         version: 1.0.6
@@ -1007,6 +1061,7 @@ m_PackageAssets:
         - 2.1.5
         - 2.1.6
         - 2.2.0-preview.1
+        - 2.2.0-preview.2
         - 3.0.0-preview.1
         - 3.0.0-preview.3
         - 3.0.0-preview.4
@@ -1025,9 +1080,12 @@ m_PackageAssets:
         - 3.0.5
         - 3.0.6
         - 3.2.0-pre.1
+        - 3.2.0-pre.2
+        - 4.0.0-pre.1
         compatible:
         - 3.0.6
         - 3.2.0-pre.1
+        - 3.2.0-pre.2
         verified: 3.0.6
       dependencies:
       - name: com.unity.ugui
@@ -1146,12 +1204,18 @@ m_PackageAssets:
         - 1.5.4
         - 1.5.5
         - 1.5.6
+        - 1.5.7
         - 1.6.0-pre.1
         - 1.6.0-pre.3
         - 1.6.0-pre.4
         - 1.6.0-pre.5
         - 1.6.1
         - 1.6.2
+        - 1.6.3
+        - 1.6.4
+        - 1.7.0-pre.1
+        - 1.7.0-pre.2
+        - 1.7.0
         compatible:
         - 1.4.8
         - 1.5.0-pre.2
@@ -1167,12 +1231,18 @@ m_PackageAssets:
         - 1.5.4
         - 1.5.5
         - 1.5.6
+        - 1.5.7
         - 1.6.0-pre.1
         - 1.6.0-pre.3
         - 1.6.0-pre.4
         - 1.6.0-pre.5
         - 1.6.1
         - 1.6.2
+        - 1.6.3
+        - 1.6.4
+        - 1.7.0-pre.1
+        - 1.7.0-pre.2
+        - 1.7.0
         verified: 1.4.8
       dependencies:
       - name: com.unity.modules.director
@@ -3085,6 +3155,7 @@ m_PackageAssets:
         - 1.0.0
         - 1.0.5
         - 1.0.6
+        - 2.0.2
         compatible:
         - 0.1.5-preview
         - 0.1.6-preview
@@ -3092,6 +3163,7 @@ m_PackageAssets:
         - 1.0.0
         - 1.0.5
         - 1.0.6
+        - 2.0.2
         verified: 1.0.6
       dependencies: []
       resolvedDependencies: []
@@ -3119,13 +3191,13 @@ m_PackageAssets:
         url: https://github.cds.internal.unity3d.com/unity/com.unity.ext.nunit.git
         revision: 29ea4d6504a5f58fb3a6934db839aa80ae6d9d88
         path: 
-    - packageId: com.unity.settings-manager@1.0.2
+    - packageId: com.unity.settings-manager@1.0.3
       testable: 0
       isDirectDependency: 0
-      version: 1.0.2
+      version: 1.0.3
       source: 1
       resolvedPath: C:\Users\anders.larssonbrand\Documents\GitHub\Anders-Brandt\FPS
-        ht-2021\Library\PackageCache\com.unity.settings-manager@1.0.2
+        ht-2021\Library\PackageCache\com.unity.settings-manager@1.0.3
       assetPath: Packages/com.unity.settings-manager
       name: com.unity.settings-manager
       displayName: Settings Manager
@@ -3147,6 +3219,8 @@ m_PackageAssets:
         - 1.0.1
         - 1.0.2
         - 1.0.3
+        - 2.0.0
+        - 2.0.1
         compatible:
         - 0.1.0-preview.4
         - 0.1.0-preview.8
@@ -3154,6 +3228,8 @@ m_PackageAssets:
         - 1.0.1
         - 1.0.2
         - 1.0.3
+        - 2.0.0
+        - 2.0.1
         verified: 1.0.3
       dependencies: []
       resolvedDependencies: []
@@ -3170,13 +3246,13 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 637187671360000000
+      datePublishedTicks: 637300096300000000
       documentationUrl: 
       hasRepository: 1
       repository:
         type: git
         url: git+https://github.com/Unity-Technologies/com.unity.settings-manager.git
-        revision: e8eedc87ca7850bac0f7b2257db4edb8c300a0f3
+        revision: 473664ccba1496294b741cf169740a5d54b3d0b6
         path: 
     - packageId: com.unity.nuget.newtonsoft-json@2.0.0
       testable: 0
@@ -3218,6 +3294,8 @@ m_PackageAssets:
         - 2.0.0-preview.2
         - 2.0.0
         - 2.0.1-preview.1
+        - 2.0.2
+        - 3.0.1
         compatible:
         - 1.0.0-preview.2
         - 1.0.0-preview.3
@@ -3229,7 +3307,9 @@ m_PackageAssets:
         - 2.0.0-preview.2
         - 2.0.0
         - 2.0.1-preview.1
-        verified: 2.0.0
+        - 2.0.2
+        - 3.0.1
+        verified: 2.0.2
       dependencies: []
       resolvedDependencies: []
       keywords: []

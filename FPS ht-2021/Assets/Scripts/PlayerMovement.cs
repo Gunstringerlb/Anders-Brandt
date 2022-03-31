@@ -18,13 +18,25 @@ public class PlayerMovement : MonoBehaviour
     public float groundDistance = 0.4f;
     public LayerMask groundMask; 
 
-    Vector3 velocity;
+    private Vector3 grndCheckPos;
     bool isGrounded;
+    [SerializeField] public Vector3 velocity;
+
+    [Space]
+    [Space]
+
+    [Header("Wall Climbing")]
+    [SerializeField] private float wallClimbAngle = 10;
+    [SerializeField] private float wallClimbHeight = 4;
+    [SerializeField] private float wallClimbDist = 1;
+    [SerializeField] private float wallClimbTime = 1;
+    [SerializeField] private float crestFactor = 0.1f;
 
     void Start()
     {
         playerCtrl = GetComponent<CharacterController>();
         originalHeight = playerCtrl.height;
+        grndCheckPos = groundCheck.localPosition;
     }
 
     // Update is called once per frame
@@ -74,16 +86,79 @@ public class PlayerMovement : MonoBehaviour
             speed = 12f;
             GoUp();
         }
+
+
+        Ray ray = new Ray(Camera.main.transform.position, transform.forward);
+        RaycastHit hitInfo;
+        if(Input.GetAxis("Vertical") > 0  && Physics.Raycast(ray, out hitInfo, wallClimbDist))
+        {
+            if (hitInfo.normal.y <= Mathf.Sin(wallClimbAngle * Mathf.Deg2Rad) || hitInfo.normal.y >= -Mathf.Sin(wallClimbAngle * Mathf.Deg2Rad))
+            {
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    ClimbWall(transform.forward);
+                }
+            }
+        }
     }
 
     void Crouch()
     {
         playerCtrl.height = reducedHeight;
-    }
+        groundCheck.localPosition = new Vector3(groundCheck.localPosition.x, grndCheckPos.y + (originalHeight - reducedHeight)/2, groundCheck.localPosition.z);
+    } 
 
     void GoUp()
     {
         playerCtrl.height = originalHeight;
+        groundCheck.localPosition = new Vector3(groundCheck.localPosition.x, grndCheckPos.y, groundCheck.localPosition.z);
+
+    }
+
+    void ClimbWall(Vector3 rayDirection)
+    {
+        StartCoroutine(Climb(wallClimbTime, rayDirection));
+    }
+
+    IEnumerator Climb(float time, Vector3 rayDirection)
+    {
+        Vector3 startPos = transform.position;
+        Vector3 endPos = transform.position + new Vector3(0, wallClimbHeight, 0);
+
+
+        float timer = 0;
+        while(timer < time)
+        {
+            velocity = Vector3.zero;
+            transform.position = Vector3.Lerp(startPos, endPos, WallClimbSpeed(timer / time));
+
+
+            if((endPos - startPos) == new Vector3(0, wallClimbHeight, 0))
+            {
+                Ray ray = new Ray(Camera.main.transform.position, rayDirection + Vector3.down);
+                RaycastHit hitInfo;
+                if(Physics.Raycast(ray, out hitInfo, wallClimbDist * 2))
+                {
+                    if(hitInfo.normal.y >= Mathf.Sin((90-wallClimbAngle) * Mathf.Deg2Rad))
+                    {
+                        startPos = transform.position;
+                        endPos = hitInfo.point + Vector3.up * originalHeight / 2;
+                        endPos += rayDirection * 0.15f;
+                        timer = 0;
+                        time *= crestFactor;
+                    }
+                }
+            }
+
+            timer += Time.deltaTime;
+            yield return null;
+        }
+    }
+
+    float WallClimbSpeed(float x)
+    {
+        //return -(x - 1) * (x - 1) + 1;
+        //return Mathf.Sqrt(1 - (x - 1) * (x - 1));
+        return -(x - 1) * (x - 1) * (x - 1) * (x - 1) + 1;
     }
 }
-
