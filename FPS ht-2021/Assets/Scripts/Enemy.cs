@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     public Vector3 respawnPos;
     public Quaternion respawnRot;
 
+    // Här sätts min fiendes startposition för att den senare ska kunna respawna där ifall den dör
     private void Start()
     {
         health = maxHealth;
@@ -16,7 +17,8 @@ public class Enemy : MonoBehaviour
         respawnPos = transform.position;
         respawnRot = transform.rotation;
     }
-
+    
+    // Här säger jag till fienden att dö när hans liv är mindre än 0
     public void TakeDamage (float amount)
     {
         health -= amount;
@@ -26,6 +28,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    // Denna funktion förklarar vad som ska ske med fienden när den dör
     void Die ()
     {
         Renderer renderer = GetComponent<Renderer>();
@@ -39,7 +42,7 @@ public class Enemy : MonoBehaviour
         StartCoroutine(Respawn());
     }
 
-    //gör det möjlig att ha en timer i bakgrunden  
+    //
     IEnumerator Respawn()
     {
         yield return new WaitForSeconds(respawnTime);

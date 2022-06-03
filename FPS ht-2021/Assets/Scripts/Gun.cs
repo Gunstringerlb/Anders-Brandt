@@ -8,9 +8,9 @@ public class Gun : MonoBehaviour
     public float firerate = 10f;
     public float knockback = 10f;
     private float nextTimeTofire = 0f;
-    public int maxAmmo = 30;
-    public float reloadTime = 1f;
-    private int currentAmmo;
+    // public int maxAmmo = 30; (tanke för ett magasin sqript)
+    // public float reloadTime = 1f; (tanke för ett magasin sqript)
+    // private int currentAmmo; (tanke för ett magasin sqript)
 
 
 
@@ -21,10 +21,10 @@ public class Gun : MonoBehaviour
 
    void Start()
     {
-        currentAmmo = maxAmmo;
+        // currentAmmo = maxAmmo; (tanke för ett magasin sqript)
     }
 
-    // Update is called once per frame
+    // Denna funktionen ger mitt vapen automatiserad avfyrning.
     void Update()
     {
         if (Input.GetButton("Fire1") && Time.time >= nextTimeTofire)
@@ -34,7 +34,8 @@ public class Gun : MonoBehaviour
         }
     }
 
-    void Shoot()
+   // Denna funktionen är ansvarig för mitt vapens skjutning. Det innefattar skottens riktning och effekt på objekt samt vapnets muzzleflash när det avfyras.
+    void Shoot() 
     {
         RaycastHit hit;
         Ray ray = new Ray(fpsCam.transform.position, fpsCam.transform.forward);
@@ -49,7 +50,7 @@ public class Gun : MonoBehaviour
             if (enemy != null)
             {
                 enemy.TakeDamage(damage);
-            }
+            } // Minskar fiendens liv
 
             
 
@@ -59,10 +60,10 @@ public class Gun : MonoBehaviour
                 Vector3 force = ray.direction * knockback;
 
                 rb.AddForce(force);
-            }
+            } //Knockback
 
-            GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
-            Destroy(impactGO, 2f);
+            GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal)); //
+            Destroy(impactGO, 2f); 
 
             
 

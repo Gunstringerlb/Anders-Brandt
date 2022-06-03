@@ -22,8 +22,8 @@ public class PlayerMovement : MonoBehaviour
     bool isGrounded;
     [SerializeField] public Vector3 velocity;
 
-    [Space]
-    [Space]
+    [Space] 
+    [Space] // Bara lite roliga grejer för att göra inspector window renare/finare.
 
     [Header("Wall Climbing")]
     [SerializeField] private float wallClimbAngle = 10;
@@ -32,36 +32,39 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float wallClimbTime = 1;
     [SerializeField] private float crestFactor = 0.1f;
 
+    // Sätter startvärden för längd, groundedposition & charactercontroller
     void Start()
     {
         playerCtrl = GetComponent<CharacterController>();
         originalHeight = playerCtrl.height;
         grndCheckPos = groundCheck.localPosition;
+        
     }
+    
 
-    // Update is called once per frame
     void Update()
     {
-        //Kollar om jag står på marken
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if(isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
-        }
+        } // Kollar om jag står på marken
+
 
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
         Vector3 move = transform.right * x + transform.forward * z;
 
-        controller.Move(move * speed * Time.deltaTime); 
+        controller.Move(move * speed * Time.deltaTime);
 
-        //Jump;
-        if(Input.GetButtonDown("Jump") && isGrounded)
+        //Kontrollerar hopp funktion
+        if (Input.GetButtonDown("Jump") && isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity); 
         }
+        
 
         velocity.y += gravity * Time.deltaTime;
 
@@ -75,8 +78,8 @@ public class PlayerMovement : MonoBehaviour
         else
             speed = 12f;
 
-       //Crouch;
-       if (Input.GetKey(KeyCode.LeftControl))
+        //Crouch;
+        if (Input.GetKey(KeyCode.LeftControl))
         {
             speed = 6f;
             Crouch();
@@ -86,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
             speed = 12f;
             GoUp();
         }
-
+        
 
         Ray ray = new Ray(Camera.main.transform.position, transform.forward);
         RaycastHit hitInfo;
@@ -120,7 +123,7 @@ public class PlayerMovement : MonoBehaviour
         StartCoroutine(Climb(wallClimbTime, rayDirection));
     }
 
-    IEnumerator Climb(float time, Vector3 rayDirection)
+    IEnumerator Climb(float time, Vector3 rayDirection) //
     {
         Vector3 startPos = transform.position;
         Vector3 endPos = transform.position + new Vector3(0, wallClimbHeight, 0);
@@ -155,6 +158,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    // Lite olika ekvationer som beskriver hastigheten för väggklättrande, thx till mattekursen. Lägg in i geogebra för att se hur hastigheten ser ut grafiskt.
     float WallClimbSpeed(float x)
     {
         //return -(x - 1) * (x - 1) + 1;

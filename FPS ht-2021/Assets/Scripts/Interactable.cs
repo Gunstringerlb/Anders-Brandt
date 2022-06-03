@@ -15,28 +15,20 @@ public class Interactable : MonoBehaviour
     private Transform player;
 
 
-    //public delegate void OnInteractHandler();
-    //public event OnInteractHandler OnInteract;
+    //public delegate void OnInteractHandler(); 
+    //public event OnInteractHandler OnInteract; (Försökte ge mig på lite event system men det kom inte riktigt nånstans)
 
 
-    // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         prompt = Instantiate(promptPrefab, transform.position + promptPosition, transform.rotation);
 
         prompt.transform.SetParent(transform);
-
-        //this.OnInteract += Test;
+        // Definierar spelare och prompt så fort spelet startar
+        
     }
 
-
-    void Test()
-    {
-        Debug.Log("Event fired!");
-    }
-
-    // Update is called once per frame
     void Update()
     {
         // Kollar avståndet mellan spak och spelare
@@ -44,14 +36,14 @@ public class Interactable : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                //OnInteract?.Invoke();
+               
                 anim.SetBool(
                     "Interacted", 
                     !anim.GetBool("Interacted")
                 );
             }
 
-            //Display interaction prompt 
+            
             prompt.SetActive(true);
         }
         else
@@ -59,11 +51,11 @@ public class Interactable : MonoBehaviour
             prompt.SetActive(false);
         }
     }
-    private void OnDrawGizmos()
+    private void OnDrawGizmos() // Här gjorde jag en egen gizmo för interactable game objects
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, activationDistance);
+        Gizmos.DrawWireSphere(transform.position, activationDistance); // En gul wiresphere för distansen då jag kan använda dörren
         Gizmos.color = Color.red;
-        Gizmos.DrawSphere(transform.position + promptPosition, 0.1f);
+        Gizmos.DrawSphere(transform.position + promptPosition, 0.1f); // En röd boll för själva prompten, alltså texten.
     }
 }
